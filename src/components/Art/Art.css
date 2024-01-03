@@ -1,0 +1,210 @@
+.box-parent {
+  position: relative;
+  height: 30rem;
+  width: 40rem;
+}
+
+.box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  animation-duration: 8000ms, 2000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  /* text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box > p {
+  color: white;
+  background: black;
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+}
+
+.box-1 {
+  background: #000000;
+  animation-name: box-1-Position, box-radius;
+}
+.box-2 {
+  background: #586f7c;
+
+  animation-name: box-2-Position, box-radius;
+}
+.box-3 {
+  background: #b8dbd9;
+
+  animation-name: box-3-Position, box-radius;
+}
+.box-4 {
+  background: #ff570a;
+
+  animation-name: box-4-Position, box-radius;
+}
+.box-5 {
+  background: #04724d;
+
+  animation-name: box-5-Position, box-radius;
+}
+.box-6 {
+  background: #000000;
+
+  animation-name: box-6-Position, box-radius;
+}
+.box-7 {
+  background: #ff0035;
+  animation-name: box-7-Position, box-radius;
+}
+
+@keyframes box-radius {
+  0% {
+    border-radius: 0rem;
+  }
+  100% {
+    border-radius: 5rem;
+  }
+}
+
+@keyframes box-1-Position {
+  0%,
+  33.33% {
+    top: 0rem;
+    left: 0rem;
+    width: 4rem;
+    height: 13rem;
+    background-color: #e21111;
+  }
+  66.66%,
+  100% {
+    top: 0rem;
+    left: 0;
+    width: 12rem;
+    height: 10rem;
+    background: #000000;
+  }
+}
+
+@keyframes box-2-Position {
+  0%,
+  33.33% {
+    top: 0rem;
+    left: 4rem;
+    width: 5rem;
+    height: 19rem;
+    background-color: #ffa600;
+  }
+  66.66%,
+  100% {
+    top: 10rem;
+    left: 17rem;
+    width: 9rem;
+    height: 20rem;
+    background: #586f7c;
+  }
+}
+
+@keyframes box-3-Position {
+  0%,
+  33.33% {
+    top: 12rem;
+    left: 9rem;
+    width: 5rem;
+    height: 18rem;
+    background-color: #ffe605;
+  }
+  66.66%,
+  100% {
+    top: 10rem;
+    left: 0rem;
+    width: 17rem;
+    height: 20rem;
+    background: #b8dbd9;
+  }
+}
+
+@keyframes box-4-Position {
+  0%,
+  33.33% {
+    top: 12rem;
+    left: 14rem;
+    width: 7rem;
+    height: 13rem;
+    background-color: #0ab904;
+  }
+  66.66%,
+  100% {
+    top: 0rem;
+    left: 12rem;
+    width: 14rem;
+    height: 10rem;
+    background: #ff570a;
+  }
+}
+
+@keyframes box-5-Position {
+  0%,
+  33.33% {
+    top: 0rem;
+    left: 21rem;
+    width: 8rem;
+    height: 30rem;
+    background-color: #0c4af5;
+  }
+  66.66%,
+  100% {
+    top: 0rem;
+    left: 26rem;
+    width: 14rem;
+    height: 16rem;
+    background: #04724d;
+  }
+}
+
+@keyframes box-6-Position {
+  0%,
+  33.33% {
+    top: 3rem;
+    left: 29rem;
+    width: 7rem;
+    height: 24rem;
+    background-color: #5508ad;
+  }
+  66.66%,
+  100% {
+    top: 16rem;
+    left: 26rem;
+    width: 14rem;
+    height: 14rem;
+    background: #000000;
+  }
+}
+
+@keyframes box-7-Position {
+  0%,
+  33.33% {
+    top: 8rem;
+    left: 36rem;
+    width: 4rem;
+    height: 22rem;
+    background-color: #cc56f0;
+  }
+  66.66%,
+  100% {
+    top: 24rem;
+    width: 6rem;
+    height: 6rem;
+    left: 34rem;
+    background: #ff0035;
+  }
+}
