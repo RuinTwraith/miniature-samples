@@ -46,7 +46,7 @@
 .loader-4 > .block {
   animation: blockAnimateHorizontal 2s infinite alternate-reverse
     cubic-bezier(0.31, 0.97, 0.89, 0.09);
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 10px rgba(32, 32, 32, 0.2);
 }
 
 .loader-3 > .block-1,
