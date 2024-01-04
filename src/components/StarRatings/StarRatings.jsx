@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style';
+import './style.css';
 
 export default function StarRatings() {
   const [ratings, setRatings] = useState(0);
