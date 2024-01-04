@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function Accordion(props) {
   const { tabs, selectedTab, setSelectedTab, children } = props;
@@ -9,12 +9,12 @@ export default function Accordion(props) {
 
   return (
     <div className="w-full">
-      <div className="flex gap-1">
+      <div className="flex gap-1 flex-wrap">
         {tabs.map((item) => (
           <div
             key={item.value}
             className={`border p-1 px-2 cursor-pointer rounded-md ${
-              selectedTab === item.value && 'bg-red-500 text-white'
+              selectedTab === item.value && "bg-red-500 text-white"
             }`}
             onClick={() => setSelectedTab(item.value)}
           >

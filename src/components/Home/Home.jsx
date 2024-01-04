@@ -1,43 +1,48 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
-import Art from '../Art';
-import Tabs from '../Tabs';
-const Accordion = lazy(() => import('../Accordion'));
-const StarRatings = lazy(() => import('../StarRatings'));
-const ImageCarousel = lazy(() => import('../ImageCarousel'));
-const Tab1 = lazy(() => import('../Tab1'));
-const Timer = lazy(() => import('../Timer'));
-const ProgressBar = lazy(() => import('../ProgressBar'));
+import React, { useState, useEffect, lazy, Suspense } from "react";
+import Art from "../Art";
+import Tabs from "../Tabs";
+const Accordion = lazy(() => import("../Accordion"));
+const StarRatings = lazy(() => import("../StarRatings"));
+const ImageCarousel = lazy(() => import("../ImageCarousel"));
+const Tab1 = lazy(() => import("../Tab1"));
+const Timer = lazy(() => import("../Timer"));
+const ProgressBar = lazy(() => import("../ProgressBar"));
+const Loader = lazy(() => import("../Loader"));
 
 export default function Home({ defaultTab = 0 }) {
   const [selectedTab, setSelectedTab] = useState(defaultTab);
   const tabs = [
     {
       value: 0,
-      name: 'JS',
+      name: "JS",
     },
     {
       value: 1,
-      name: 'Accordion',
+      name: "Accordion",
     },
     {
       value: 2,
-      name: 'Star Ratings',
+      name: "Star Ratings",
     },
     {
       value: 3,
-      name: 'Image Carousel',
+      name: "Image Carousel",
     },
     {
       value: 4,
-      name: 'Timer',
+      name: "Timer",
     },
     {
       value: 5,
-      name: 'Art',
+      name: "Art",
     },
     {
       value: 6,
-      name: 'Progress Bar',
+      name: "Progress Bar",
+    },
+    {
+      value: 7,
+      name: "Loader",
     },
   ];
 
@@ -84,6 +89,11 @@ export default function Home({ defaultTab = 0 }) {
         {selectedTab === 6 && (
           <Suspense fallback={<p>Loading</p>}>
             <ProgressBar />
+          </Suspense>
+        )}
+        {selectedTab === 7 && (
+          <Suspense fallback={<p>Loading</p>}>
+            <Loader />
           </Suspense>
         )}
       </Tabs>

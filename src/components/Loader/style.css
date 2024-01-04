@@ -1,0 +1,80 @@
+.loader {
+  animation-timing-function: cubic-bezier(0.4, 0.86, 0.7, 0.2);
+}
+
+.loader-2__left {
+  animation: positionAnimateLeft 2s infinite alternate
+    cubic-bezier(0.22, 0.74, 0.77, 0.25);
+}
+.loader-2__right {
+  animation: positionAnimateRight 2s infinite alternate
+    cubic-bezier(0.22, 0.74, 0.77, 0.25);
+  background: rgba(204, 251, 241, 0.4);
+}
+
+@keyframes positionAnimateLeft {
+  from {
+    transform: translate(5rem);
+  }
+  to {
+    transform: translate(0rem);
+  }
+}
+@keyframes positionAnimateRight {
+  from {
+    transform: translate(-5rem);
+  }
+  to {
+    transform: translate(0rem);
+  }
+}
+
+.loader-3 > .block {
+  animation: blockAnimate 1.5s infinite alternate
+    cubic-bezier(0.25, 0.99, 0.93, 0.06);
+}
+
+@keyframes blockAnimate {
+  from {
+    transform: translate(4rem);
+  }
+  to {
+    transform: translate(0rem);
+  }
+}
+
+.loader-4 > .block {
+  animation: blockAnimateHorizontal 2s infinite alternate-reverse
+    cubic-bezier(0.31, 0.97, 0.89, 0.09);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.loader-3 > .block-1,
+.loader-4 > .block-1 {
+  animation-delay: 150ms;
+}
+.loader-3 > .block-2,
+.loader-4 > .block-2 {
+  animation-delay: 300ms;
+}
+.loader-3 > .block-3,
+.loader-4 > .block-3 {
+  animation-delay: 450ms;
+}
+.loader-3 > .block-4,
+.loader-4 > .block-4 {
+  animation-delay: 600ms;
+}
+.loader-3 > .block-5,
+.loader-4 > .block-5 {
+  animation-delay: 750ms;
+}
+
+@keyframes blockAnimateHorizontal {
+  0% {
+    transform: translate(1rem, 1rem);
+  }
+  100% {
+    transform: translate(3rem, 2rem);
+  }
+}
