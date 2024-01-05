@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function Accordion(props) {
   const { title, description } = props;
@@ -12,10 +12,10 @@ export default function Accordion(props) {
   return (
     <div className="w-full">
       <div
-        className="header w-full flex justify-between cursor-pointer"
+        className="header w-full flex justify-between cursor-pointer font-semibold"
         onClick={handleClick}
       >
-        <h3>{title}</h3> <button>{open ? '△' : '▽'}</button>
+        <h3>{title}</h3> <button>{open ? "△" : "▽"}</button>
       </div>
       {open && <p>{description}</p>}
     </div>

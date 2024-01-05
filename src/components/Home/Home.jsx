@@ -61,8 +61,8 @@ export default function Home({ defaultTab = 0 }) {
         {selectedTab === 1 && (
           <Suspense fallback={<p>Loading</p>}>
             <Accordion
-              title="This is title"
-              description="This is description"
+              title="About Linkin Park"
+              description="Linkin Park is an American rock band from Agoura Hills, California. The band's lineup consists of vocalist/rhythm guitarist/keyboardist Mike Shinoda, lead guitarist Brad Delson, bassist Dave Farrell, DJ/turntablist Joe Hahn and drummer Rob Bourdon, with vocalist Chester Bennington also part of the band until his death in 2017."
             />
           </Suspense>
         )}

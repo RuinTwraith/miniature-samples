@@ -11,7 +11,7 @@ export default function ProgressBar(props) {
 
   const handleChange = (e) => {
     setValue(e.target.value);
-    console.log(getComputedStyle(progressBarRef.current));
+    // console.log(getComputedStyle(progressBarRef.current));
     progressBarRef.current.style.width = `${e.target.value}%`;
   };
 

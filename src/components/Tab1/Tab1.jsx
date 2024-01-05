@@ -1,102 +1,73 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import Button from "../Button";
 
-export default function Accordion(props) {
-  // const { title, description } = props;
-
-  const [open, setOpen] = useState(false);
-  const [num1, setNum1] = useState(0);
-  const [num2, setNum2] = useState(10);
-  const [randNum, setRandNum] = useState(0);
+export default function Tab1(props) {
+  const [condition, setCondition] = useState(false);
+  const [consoleLog, setConsoleLog] = useState([]);
 
   const handleClick = () => {
-    setOpen(!open);
+    setConsoleLog([]);
     init();
+  };
+
+  const updateConsole = (...args) => {
+    setConsoleLog((prev) => {
+      return [...prev, `${args.join(" ")}`];
+    });
   };
 
   const init = async function () {
     const promise = new Promise((resolve, reject) => {
-      // console.log("PROMISE")
       setTimeout(() => {
-        if (open) {
-          const p1 = new Promise((resolve) => resolve('its resolved'));
-          resolve(p1);
+        if (condition) {
+          reject("Error");
         }
-        reject('Error');
-      }, 100);
+        resolve("dadsasd");
+      }, 1000);
     });
     promise
       .finally((res) => {
-        console.log('finally 1');
-      })
-      .then(
-        (res) => {
-          console.log('promise resolved 1', res);
-          return 'gg';
-        } /* ,
-        (res) => {
-          console.log('promise rejected 1', res);
-          return 'gg';
-        } */
-      )
-      // .then((res) => {
-      //   console.log('promise resolved 2', res);
-      // })
-      .catch((err) => {
-        console.error('promise rejected 2', err);
+        console.log("Finally 1");
+        updateConsole("Finally 1");
       })
       .then((res) => {
-        console.log("well what's this");
+        console.log("Promise resolved 1", res);
+        updateConsole("Promise resolved 1", res);
+        return "from then 1";
       })
-      .finally((res) => console.log('finally 2'));
-
-    // try {
-    //   const res = await promise;
-    //   console.log('promise resolved 1', res);
-    // } catch (e) {
-    //   console.log('promise rejected', e);
-    // }
-  };
-
-  const generateRandomNumber = () => {
-    // let random = num1 - num2;
-    // while (1 < 2) {
-    //   random = new Date().getMilliseconds();
-    //   console.log('random', random);
-    //   if (random > num1 && random < num2) {
-    //     break;
-    //   }
-    // }
-    // setRandNum(random);
+      .catch((err) => {
+        console.error("Catch - 1", err);
+        updateConsole("Catch - 1", err);
+      })
+      .then((res) => {
+        console.log("Then - 2", res);
+        updateConsole("Then - 2", res);
+      })
+      .finally((res) => {
+        console.log("Finally - 2");
+        updateConsole("Finally - 2");
+      });
   };
 
   return (
-    <div className="w-full">
-      <button onClick={handleClick} className="border p-2 rounded mr-4 mb-4">
-        BUTTON
-      </button>
-      {/* <div className="flex gap-4 items-center">
-        <button
-          className="border p-2 rounded bg-teal-300"
-          onClick={() => generateRandomNumber()}
-        >
-          Generate Random Number
-        </button>
-        between
-        <input
-          type="number"
-          value={num1}
-          className="border w-14 rounded text-center"
-          onChange={(e) => setNum1(e.target.value)}
-        />
-        to
-        <input
-          type="number"
-          value={num2}
-          className="border w-14 rounded text-center"
-          onChange={(e) => setNum2(e.target.value)}
-        />
-      </div>
-      <div className="mt-4">Random Number is {randNum}</div> */}
+    <div className="w-full flex flex-col items-center justify-center mt-20">
+      <Button onClick={handleClick}>Press Me!</Button>
+      <Button
+        onClick={() => setCondition((prev) => !prev)}
+        className={`${condition ? "bg-red-700" : "bg-teal-700"}`}
+      >
+        Throw error - {`${condition}`}
+      </Button>
+      {consoleLog.length > 0 && (
+        <div className="console">
+          <div className="font-bold">Console Logs in order</div>
+          <div>
+            {consoleLog.map((item) => (
+              <p>{item}</p>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

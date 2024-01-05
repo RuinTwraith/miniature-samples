@@ -1,16 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
 import "./style.css";
 
 export default function Loader(props) {
-  const [value, setValue] = useState(25);
-
-  useEffect(() => {}, []);
-
-  const handleChange = (e) => {};
-
   return (
     <div className="loader-container flex flex-col gap-8">
-      <button className="flex gap-4 w-40 h-12 items-center border rounded-lg px-3">
+      <button className="flex gap-4 w-40 h-12 items-center border rounded-lg px-3 hover:scale-105 transition-transform">
         {/* loader starts */}
         <div
           className="loader w-8 h-8 bg-transparent rounded-full border-8 border-y-purple-600 border-r-purple-600
