@@ -2,7 +2,13 @@
 
 ![image](https://github.com/RuinTwraith/miniature-samples/assets/19678760/f4a5aa7f-ae79-4e3d-a86f-1f9885d4604b)
 
-![image](https://github.com/RuinTwraith/miniature-samples/assets/19678760/12de6d4c-610e-4385-a0f6-38aa6544e267)
+# Mouse effects
+![image](https://github.com/RuinTwraith/miniature-samples/assets/19678760/caa996f0-4f94-4737-ac33-e9d249bccfb3)
+
+# Different kinds of loaders
+![image](https://github.com/RuinTwraith/miniature-samples/assets/19678760/c44b0b37-1aee-43c9-afa2-16114d45c3f2)
+
+
 
 
 
