@@ -8,6 +8,7 @@ const Tab1 = lazy(() => import("../Tab1"));
 const Timer = lazy(() => import("../Timer"));
 const ProgressBar = lazy(() => import("../ProgressBar"));
 const Loader = lazy(() => import("../Loader"));
+const Mouse = lazy(() => import("../Mouse"));
 
 export default function Home({ defaultTab = 0 }) {
   const [selectedTab, setSelectedTab] = useState(defaultTab);
@@ -43,6 +44,10 @@ export default function Home({ defaultTab = 0 }) {
     {
       value: 7,
       name: "Loader",
+    },
+    {
+      value: 8,
+      name: "Mouse",
     },
   ];
 
@@ -94,6 +99,11 @@ export default function Home({ defaultTab = 0 }) {
         {selectedTab === 7 && (
           <Suspense fallback={<p>Loading</p>}>
             <Loader />
+          </Suspense>
+        )}
+        {selectedTab === 8 && (
+          <Suspense fallback={<p>Loading</p>}>
+            <Mouse />
           </Suspense>
         )}
       </Tabs>

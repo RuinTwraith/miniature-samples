@@ -3,7 +3,7 @@ import Home from './components/Home';
 export default function App() {
   return (
     <div className="p-2">
-      <Home defaultTab={0} />
+      <Home defaultTab={8} />
     </div>
   );
 }
