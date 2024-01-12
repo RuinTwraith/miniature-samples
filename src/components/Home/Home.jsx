@@ -9,6 +9,7 @@ const Timer = lazy(() => import("../Timer"));
 const ProgressBar = lazy(() => import("../ProgressBar"));
 const Loader = lazy(() => import("../Loader"));
 const Mouse = lazy(() => import("../Mouse"));
+const TypeAhead = lazy(() => import("../TypeAhead"));
 
 export default function Home({ defaultTab = 0 }) {
   const [selectedTab, setSelectedTab] = useState(defaultTab);
@@ -48,6 +49,10 @@ export default function Home({ defaultTab = 0 }) {
     {
       value: 8,
       name: "Mouse",
+    },
+    {
+      value: 9,
+      name: "TypeAhead",
     },
   ];
 
@@ -104,6 +109,11 @@ export default function Home({ defaultTab = 0 }) {
         {selectedTab === 8 && (
           <Suspense fallback={<p>Loading</p>}>
             <Mouse />
+          </Suspense>
+        )}
+        {selectedTab === 9 && (
+          <Suspense fallback={<p>Loading</p>}>
+            <TypeAhead />
           </Suspense>
         )}
       </Tabs>
